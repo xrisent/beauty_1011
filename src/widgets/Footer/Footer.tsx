@@ -1,4 +1,15 @@
-function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
+import {
+  IconClock,
+  IconInstagram,
+  IconMail,
+  IconPhone,
+  IconPin,
+  IconTelegram,
+  IconVK,
+} from "shared/assets";
+import type { Page } from "shared/types";
+
+export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
   return (
     <footer
       style={{

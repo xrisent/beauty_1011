@@ -1,3 +1,5 @@
+import { SERVICES } from "entities/service/model/mock";
+import { useInView } from "shared/hooks";
 import { SectionLabel } from "shared/ui";
 
 export function ServicesPage() {

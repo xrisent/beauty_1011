@@ -1,3 +1,7 @@
+import { useInView } from "shared/hooks";
+
+import { MASTERS } from "./constants";
+
 export function Masters() {
   const { ref, visible } = useInView();
   return (

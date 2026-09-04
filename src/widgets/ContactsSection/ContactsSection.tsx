@@ -1,3 +1,5 @@
+import { IconClock, IconMail, IconPhone, IconPin } from "shared/assets";
+import { useInView } from "shared/hooks";
 import { SectionLabel } from "shared/ui";
 
 export function Contacts() {

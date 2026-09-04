@@ -1,5 +1,6 @@
 // абсолютный путь
 import { About, Contacts, Hero, Masters, Testimonials } from "widgets";
+import type { Page } from "shared/types";
 
 // относительный путь
 // import { Hero } from "../../widgets/HeroSection/HeroSection";

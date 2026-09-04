@@ -1,0 +1,11 @@
+export { IconClock } from "./IconClock";
+export { IconHeart } from "./IconHeart";
+export { IconInstagram } from "./IconInstagram";
+export { IconLeaf } from "./IconLeaf";
+export { IconMail } from "./IconMail";
+export { IconPhone } from "./IconPhone";
+export { IconPin } from "./IconPin";
+export { IconSparkle } from "./IconSparkle";
+export { IconStar } from "./IconStar";
+export { IconTelegram } from "./IconTelegram";
+export { IconVK } from "./IconVK";

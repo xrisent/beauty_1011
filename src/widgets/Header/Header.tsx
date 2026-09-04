@@ -1,4 +1,9 @@
-function Header({
+import { useCallback, useState } from "react";
+
+import { useScrolled } from "shared/hooks";
+import type { Page } from "shared/types";
+
+export function Header({
   page,
   onNavigate,
 }: {

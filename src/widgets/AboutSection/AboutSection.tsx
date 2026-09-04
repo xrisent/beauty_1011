@@ -1,4 +1,6 @@
-import { SectionLabel } from "shared/ui";
+import { IconHeart, IconLeaf, IconSparkle } from "shared/assets";
+import { useInView } from "shared/hooks";
+import { SectionLabel, Stars } from "shared/ui";
 
 export function About() {
   const { ref, visible } = useInView();

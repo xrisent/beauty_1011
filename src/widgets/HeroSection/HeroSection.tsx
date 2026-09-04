@@ -1,3 +1,5 @@
+import type { Page } from "shared/types";
+
 export function Hero({ onNavigate }: { onNavigate: (p: Page) => void }) {
   return (
     <section

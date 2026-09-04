@@ -1,4 +1,7 @@
-import { SectionLabel } from "shared/ui";
+import { useInView } from "shared/hooks";
+import { SectionLabel, Stars } from "shared/ui";
+
+import { TESTIMONIALS } from "./constants";
 
 export function Testimonials() {
   const { ref, visible } = useInView();
