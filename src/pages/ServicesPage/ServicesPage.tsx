@@ -1,8 +1,18 @@
-import { SERVICES } from "entities/service/model/mock";
-import { useInView } from "shared/hooks";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchServices } from "entities/service/model/slice";
 import { SectionLabel } from "shared/ui";
+import type { IService } from "entities/service/model/interface";
 
 export function ServicesPage() {
+  const dispatch = useDispatch();
+  const { services } = useSelector((state) => state.services);
+
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, [dispatch]);
+
   return (
     <div style={{ backgroundColor: "#FAF8F5", paddingTop: 72 }}>
       {/* Hero */}
@@ -64,13 +74,10 @@ export function ServicesPage() {
             gap: 40,
           }}
         >
-          {SERVICES.map((cat, ci) => {
-            const card = useInView(0.1);
+          {services.map((service: IService) => {
             return (
               <div
-                key={cat.category}
-                ref={card.ref}
-                className={`reveal reveal-d${(ci % 3) + 1} ${card.visible ? "visible" : ""}`}
+                key={service.id}
                 style={{
                   backgroundColor: "#FFFFFF",
                   borderRadius: 20,
@@ -96,50 +103,22 @@ export function ServicesPage() {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    {cat.category}
+                    {service.title}
                   </h2>
                 </div>
-                {/* Items */}
                 <div style={{ padding: "8px 28px 28px" }}>
-                  {cat.items.map((item, ii) => (
-                    <div
-                      key={item.name}
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        padding: "14px 0",
-                        borderBottom:
-                          ii < cat.items.length - 1
-                            ? "1px dashed #E2DAD0"
-                            : "none",
-                        gap: 16,
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "Manrope, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#3A3632",
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        {item.name}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "Manrope, sans-serif",
-                          fontWeight: 600,
-                          fontSize: "0.875rem",
-                          color: "#C4613A",
-                          whiteSpace: "nowrap",
-                          flexShrink: 0,
-                        }}
-                      >
-                        {item.price}
-                      </span>
-                    </div>
-                  ))}
+                  <span
+                    style={{
+                      fontFamily: "Manrope, sans-serif",
+                      fontWeight: 600,
+                      fontSize: "0.875rem",
+                      color: "#C4613A",
+                      whiteSpace: "nowrap",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {service.price}
+                  </span>
                 </div>
               </div>
             );
