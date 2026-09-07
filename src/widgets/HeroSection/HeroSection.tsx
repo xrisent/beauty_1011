@@ -1,6 +1,8 @@
-import type { Page } from "shared/types";
+import { useNavigate } from "react-router-dom";
 
-export function Hero({ onNavigate }: { onNavigate: (p: Page) => void }) {
+export function Hero() {
+  const onNavigate = useNavigate();
+
   return (
     <section
       id="hero"

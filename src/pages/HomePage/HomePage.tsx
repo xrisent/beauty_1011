@@ -1,6 +1,5 @@
 // абсолютный путь
 import { About, Contacts, Hero, Masters, Testimonials } from "widgets";
-import type { Page } from "shared/types";
 
 // относительный путь
 // import { Hero } from "../../widgets/HeroSection/HeroSection";
@@ -9,10 +8,10 @@ import type { Page } from "shared/types";
 // import { Masters } from "../../widgets/MastersSection/MastersSection";
 // import { Testimonials } from "../../widgets/TestimonialsSection/TestiomonialsSection";
 
-export function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
+export function HomePage() {
   return (
     <>
-      <Hero onNavigate={onNavigate} />
+      <Hero />
       <About />
       <Masters />
       <Testimonials />

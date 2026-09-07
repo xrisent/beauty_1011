@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   IconClock,
   IconInstagram,
@@ -7,9 +8,9 @@ import {
   IconTelegram,
   IconVK,
 } from "shared/assets";
-import type { Page } from "shared/types";
 
-export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
+export function Footer() {
+  const onNavigate = useNavigate();
   return (
     <footer
       style={{
@@ -95,7 +96,7 @@ export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
             {
               label: "Главная",
               action: () => {
-                onNavigate("home");
+                onNavigate("/");
                 window.scrollTo(0, 0);
               },
             },
@@ -109,7 +110,7 @@ export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
             {
               label: "Мастера",
               action: () => {
-                onNavigate("home");
+                onNavigate("/");
                 setTimeout(
                   () =>
                     document
@@ -122,7 +123,7 @@ export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
             {
               label: "Отзывы",
               action: () => {
-                onNavigate("home");
+                onNavigate("/");
                 setTimeout(
                   () =>
                     document
@@ -135,7 +136,7 @@ export function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
             {
               label: "Контакты",
               action: () => {
-                onNavigate("home");
+                onNavigate("/");
                 setTimeout(
                   () =>
                     document

@@ -1,36 +1,20 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useScrolled } from "shared/hooks";
-import type { Page } from "shared/types";
 
-export function Header({
-  page,
-  onNavigate,
-}: {
-  page: Page;
-  onNavigate: (p: Page) => void;
-}) {
+export function Header() {
   const scrolled = useScrolled();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const onNavigate = useNavigate();
 
-  const scrollTo = useCallback(
-    (id: string) => {
-      setMobileOpen(false);
-      if (page !== "home") {
-        onNavigate("home");
-        setTimeout(() => {
-          document
-            .getElementById(id)
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
-      } else {
-        document
-          .getElementById(id)
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    },
-    [page, onNavigate],
-  );
+  const scrollTo = (id: string) => {
+    onNavigate("/");
+    setMobileOpen(false);
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <header
@@ -53,7 +37,7 @@ export function Header({
     >
       {/* Logo */}
       <button
-        onClick={() => onNavigate("home")}
+        onClick={() => onNavigate("/")}
         style={{
           background: "none",
           border: "none",
